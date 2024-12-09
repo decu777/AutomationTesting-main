@@ -20,10 +20,8 @@ public class PracticeFormTest extends BaseTest{
     @Test
     public void navigateFromHomePageToPracticeFormPage() {
 
-        HomePage homePage = new HomePage(driver);
         homePage.isPageLoaded();
         homePage.selectMenu("Forms");
-        CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
         commonPage.selectSubMenu("Practice Form");
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);

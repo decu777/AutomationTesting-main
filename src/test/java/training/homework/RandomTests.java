@@ -1,4 +1,4 @@
-package training.tests;
+package training.homework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
