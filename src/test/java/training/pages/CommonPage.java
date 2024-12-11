@@ -28,22 +28,10 @@ public class CommonPage extends BasePage{
 
     public void selectMenu(String menuName){
         //scrollDown();
-
-        for (WebElement element: menuListElement){
-            if (element.getText().equals(menuName)) {
-                element.click();
-                break;
-            }
-        }
+        elementsHelper.selectElementByTextFromList(menuName, menuListElement);
     }
 
     public void selectSubMenu(String subMenuName){
-
-        for (WebElement element: subMenuList){
-            if (element.getText().equals(subMenuName)){
-                element.click();
-                break;
-            }
-        }
+        elementsHelper.selectElementByTextFromList(subMenuName, subMenuList);
     }
 }

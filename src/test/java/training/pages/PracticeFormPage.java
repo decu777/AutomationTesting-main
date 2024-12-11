@@ -74,16 +74,19 @@ public class PracticeFormPage extends BasePage{
     public void fillEntireForm(){
         fillFirstAndLastName();
         emailInput();
+        elementsHelper.scrollDown();
         genderLabel("Male");
         phoneNumberInput();
         selectSubject();
+        elementsHelper.scrollDown();
         hobbiesInput();
         currentAddress();
         uploadPicture();
         dateOfBirth();
-        scrollDown();
+        elementsHelper.scrollDown();
         stateAndCity();
         pause();
+        elementsHelper.scrollDown();
         submitButton();
         pause2();
     }
@@ -93,8 +96,8 @@ public class PracticeFormPage extends BasePage{
     }
 
     public void fillFirstAndLastName() {
-        firstNameinput.sendKeys("Stanciu");
-        lastNameinput.sendKeys("Ionut");
+        elementsHelper.fillElement(firstNameinput,"Stanciu");
+        elementsHelper.fillElement(lastNameinput, "Ionut");
     }
 
     public void genderLabel(String gender) {
@@ -103,57 +106,47 @@ public class PracticeFormPage extends BasePage{
         genderListElement.add(femaleGenderElement);
         genderListElement.add(otherGenderElement);
 
-        for (int index = 0; index < genderListElement.size(); index++) {
-            if (genderListElement.get(index).getText().equals(gender)) {
-                genderListElement.get(index).click();
-            }
-        }
+        elementsHelper.selectElementByTextFromList(gender, genderListElement);
     }
 
     public void phoneNumberInput(){
-        phoneNumberInput.sendKeys("07707070707");
+        elementsHelper.fillElement(phoneNumberInput,"07707070707");
     }
 
     public void selectSubject(){
-        subjectsInput.sendKeys("Accounting");
-        subjectsInput.sendKeys(Keys.ENTER);
-        subjectsInput.sendKeys("Maths");
-        subjectsInput.sendKeys(Keys.ENTER);
+        elementsHelper.selectElementUsingKeys(subjectsInput, "Accounting", Keys.ENTER);
+        elementsHelper.selectElementUsingKeys(subjectsInput, "Maths", Keys.ENTER);
     }
 
     public void hobbiesInput(){
-        hobbiesInput.click();
-        hobbiesInput2.click();
+        elementsHelper.clickElement(hobbiesInput);
+        elementsHelper.clickElement(hobbiesInput2);
     }
 
     public void currentAddress(){
-        currentAddress.sendKeys("Marte, nr 72");
+        elementsHelper.fillElement(currentAddress, "Marte, nr 72");
     }
 
     public void uploadPicture(){
-        uploadPicture.sendKeys("C:\\Users\\stanc\\Desktop/Screenshot 2024-09-27 181553.png");
+        elementsHelper.uploadFileToElement(uploadPicture);
     }
 
     public void dateOfBirth(){
-        dateOfBirth.sendKeys("11 January 2004");
-        dateOfBirth.sendKeys(Keys.HOME);
+        elementsHelper.selectElementUsingKeys(dateOfBirth, "11 January 2004", Keys.HOME);
         for (int index = 1; index <= 11; index++ ){
             defaultElement.sendKeys(Keys.DELETE);
         }
         dateOfBirth.sendKeys(Keys.ENTER);
     }
 
-    public void scrollDown() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,160)");
-    }
+//    public void scrollDown() {
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,160)");
+//    }
 
     public void stateAndCity(){
-        stateInput.sendKeys("NCR");
-        stateInput.sendKeys(Keys.ENTER);
-
-        cityInput.sendKeys("Delhi");
-        cityInput.sendKeys(Keys.ENTER);
+        elementsHelper.selectElementUsingKeys(stateInput, "NCR", Keys.ENTER);
+        elementsHelper.selectElementUsingKeys(cityInput, "Delhi", Keys.ENTER);
     }
 
     public void pause(){
@@ -165,7 +158,7 @@ public class PracticeFormPage extends BasePage{
     }
 
     public void submitButton(){
-        submitButton.click();
+        elementsHelper.clickElement(submitButton);
     }
 
     public void pause2(){
@@ -177,7 +170,7 @@ public class PracticeFormPage extends BasePage{
     }
 
     public void closeTheForm(){
-        closeForm.click();
+        elementsHelper.clickElement(closeForm);
     }
 
     @Override

@@ -10,6 +10,9 @@ import training.pages.PracticeFormPage;
 
 import java.util.*;
 
+import static training.constants.MenuKeys.FORMS_MENU;
+import static training.constants.SubMenuKeys.PRACTICE_FORM_SUBMENU;
+
 public class PracticeFormTest extends BaseTest{
 
     //Creem o metoda de test care sa mearga de pe pagina principala pana pe pagina PracticeForms
@@ -21,9 +24,9 @@ public class PracticeFormTest extends BaseTest{
     public void navigateFromHomePageToPracticeFormPage() {
 
         homePage.isPageLoaded();
-        homePage.selectMenu("Forms");
+        homePage.selectMenu(FORMS_MENU);
         commonPage.isPageLoaded();
-        commonPage.selectSubMenu("Practice Form");
+        commonPage.selectSubMenu(PRACTICE_FORM_SUBMENU);
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         practiceFormPage.isPageLoaded();
 //        practiceFormPage.fillFirstAndLastName();
@@ -148,7 +151,7 @@ public class PracticeFormTest extends BaseTest{
 //    }
 
 //    public void uploadPicture() {
-//        driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\stanc\\Desktop/Screenshot 2024-09-27 181553.png");
+//        driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\stanc\\Desktop/Screenshot1.png");
 //    }
 
 //    public void dateOfBirth() {
@@ -193,7 +196,7 @@ public class PracticeFormTest extends BaseTest{
 //    public void incarcareImagine() {
 //        WebElement afisareFisier = driver.findElement(By.xpath("//*[@id=\"uploadPicture\"]"));
 //            afisareFisier.click();
-//            getClassLoader().getResource("/Screenshot 2024-09-27 181553.png");
+//            getClassLoader().getResource("/Screenshot1.png");
 //            /*JFrame frame = new JFrame();
 //            JLabel label = new JLabel(imageIcon);
 //            frame.add(label);*/
@@ -202,7 +205,7 @@ public class PracticeFormTest extends BaseTest{
 
 //    driver.findElement(By.xpath("//*[@id=\"uploadPicture\"]")).click();
 //            driver.findElement(By.name("userfile")).click();
-//            driver.findElement(By.xpath("//*[@id=\"uploadPicture\"]")).sendKeys("Screenshot 2024-09-27 181553.png");
+//            driver.findElement(By.xpath("//*[@id=\"uploadPicture\"]")).sendKeys("Screenshot1.png");
 //            driver.findElement(By.xpath("//*[@id=\"submit\"]")).sendKeys(Keys.ENTER);
 
 
@@ -211,7 +214,7 @@ public class PracticeFormTest extends BaseTest{
 //            driver.get("https://ps.uci.edu/~franklin/doc/file_upload.html");
 //            driver.manage().window().maximize();
 //
-//            driver.findElement(By.name("userfile")).sendKeys("C://Users/stanc/Desktop/Screenshot 2024-09-27 181553.png");
+//            driver.findElement(By.name("userfile")).sendKeys("C://Users/stanc/Desktop/Screenshot1.png");
 //            //driver.findElement(By.xpath("/html/body/form/input[2]")).click();
 //            driver.findElement(By.xpath("/html/body/form/input[2]")).click();
 

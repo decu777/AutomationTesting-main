@@ -9,15 +9,18 @@ import training.pages.AlertsPage;
 
 import java.time.Duration;
 
+import static training.constants.MenuKeys.ALERTS_FRAMES_WINDOWS_MENU;
+import static training.constants.SubMenuKeys.ALERTS_SUBMENU;
+
 public class AlertsTest extends BaseTest{
 //    public WebDriver driver;
 
     @Test
     public void testAlertsFrameWindows(){
         homePage.isPageLoaded();
-        homePage.selectMenu("Alerts, Frame & Windows");
+        homePage.selectMenu(ALERTS_FRAMES_WINDOWS_MENU);
         commonPage.isPageLoaded();
-        commonPage.selectSubMenu("Alerts");
+        commonPage.selectSubMenu(ALERTS_SUBMENU);
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.isPageLoaded();
         alertsPage.interactWithAllAlerts();

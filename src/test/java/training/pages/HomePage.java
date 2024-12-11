@@ -36,18 +36,12 @@ public class HomePage extends BasePage {
 
     //Facem o metoda care sa faca click pe un meniu ales;
     public void selectMenu(String menuName){
-        scrollDown();
-
-        for (WebElement element: menuListElement){
-            if (element.getText().equals(menuName)) {
-                element.click();
-                break;
-            }
-        }
+        elementsHelper.scrollDown();
+        elementsHelper.selectElementByTextFromList(menuName, menuListElement);
     }
 
-    public void scrollDown() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,160)");
-    }
+//    public void scrollDown() {
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,160)");
+//    }
 }
